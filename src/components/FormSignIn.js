@@ -50,7 +50,7 @@ const ImportForm = ({handleSubmit, handleUser, handleValue}) => {
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit" >
+            <Button href="/" variant="primary" type="submit" >
                 Submit
             </Button>
             <Button className="mx-2" variant="secondary" type="button" >
