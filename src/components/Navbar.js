@@ -37,7 +37,7 @@ const Barnavigator = ({userSession, handleLogoutUser}) => {
           (userSession) 
           ? 
           <React.Fragment>
-            <NavDropdown.Item onClick={handleLogoutUser}>Sign In</NavDropdown.Item>
+            <NavDropdown.Item onClick={handleLogoutUser}>Sign Out</NavDropdown.Item>
           </React.Fragment>
           
           :
