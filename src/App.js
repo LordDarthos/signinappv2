@@ -71,7 +71,14 @@ function App() {
     // }
 
     const handleSubmitUser = async (data) => {  
-        await saveUser(data)
+        // await saveUser(data)
+        const user = await saveUser(data)
+        console.log("RESPUESTA",user)
+        if (user.status === 200) {
+            console.log("hola")
+        } else if (user.status === 204) {
+            
+        }
     }
     console.log(userSession)
     console.log(userLogedIn)
