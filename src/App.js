@@ -9,7 +9,6 @@ import ShowNotes from './components/ShowNotes'
 import AddNote from './components/AddNote'
 import ModifyNote from './components/EditNote'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { getNotes, editNote, saveNote, deleteNote, saveUser, loginUser } from './services/index'
@@ -52,8 +51,6 @@ function App() {
   
     }
 
-    let history = useHistory();
-
     // async function LoadUser () {
     //     // const response = await getUserSession();
     //     // const user = await getUserSession();
@@ -77,16 +74,11 @@ function App() {
         const user = await loginUser(data)
         console.log("RESPUESTA",user)
         if (user.status === 200) {
-            await setUserSession(user.data)
-            await setUserLogedIn(true)
+            setUserSession(user.data)
+            setUserLogedIn(true)
             // console.log(UserSession)
             // setUserLogedIn(true)
             // if(kk.status === 200) sessionStorage.setItem('mydata',{loged:true})
-
-  
-            history.push("/about");
-            
-
         } else if (user.status === 204) {
             setUserLogedIn(false)
         }

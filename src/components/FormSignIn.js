@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { useHistory } from "react-router-dom";
 
 
 const ImportForm = ({handleSubmit, handleUser, handleValue}) => {
 
+
+    let history = useHistory();
+
+  function handleClick() {
+    history.push("/home");
+  }
 
 
     const [formValues, setFormValues] = useState({
@@ -21,6 +28,7 @@ const ImportForm = ({handleSubmit, handleUser, handleValue}) => {
     const _handleSubmit = async (e) => {  
         e.preventDefault()
         await handleSubmit({ ...formValues }) 
+        handleClick();
     }
 
 
