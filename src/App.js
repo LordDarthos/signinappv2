@@ -8,7 +8,8 @@ import SignUp from './components/SignUp';
 import ShowNotes from './components/ShowNotes'
 import AddNote from './components/AddNote'
 import ModifyNote from './components/EditNote'
-import useHistory, { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { getNotes, editNote, saveNote, deleteNote, saveUser, loginUser } from './services/index'
