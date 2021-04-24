@@ -9,6 +9,7 @@ import ShowNotes from './components/ShowNotes'
 import AddNote from './components/AddNote'
 import ModifyNote from './components/EditNote'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { getNotes, editNote, saveNote, deleteNote, saveUser, loginUser } from './services/index'
@@ -26,9 +27,14 @@ const useStateUserSession = localStorageKey => {
 };
 
 function App() {
-    const [products, setNotes] = useState([]);
 
-    
+    let history = useHistory();
+
+    function handleClick() {
+        history.push("/");
+    }
+
+    const [products, setNotes] = useState([]);
 
     const [userSession, setUserSession] = useStateUserSession(
         'usersessionid'
@@ -87,8 +93,9 @@ function App() {
     console.log(userLogedIn)
     
     const handleLogoutUser = async () => {
-        setUserSession('')
-        setUserLogedIn(false)
+        await setUserSession('')
+        await setUserLogedIn(false)
+        handleClick()
     }
 
 

@@ -5,13 +5,11 @@ import { useHistory } from "react-router-dom";
 
 const ImportForm = ({handleSubmit, handleUser, handleValue}) => {
 
-
     let history = useHistory();
 
-  function handleClick() {
-    history.push("/home");
-  }
-
+    function handleClick() {
+        history.push("/");
+    }
 
     const [formValues, setFormValues] = useState({
         email: '',

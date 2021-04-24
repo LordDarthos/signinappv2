@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { useHistory } from "react-router-dom";
 
 
 const ImportForm = ({handleSubmit}) => {
+
+    let history = useHistory();
+
+    function handleClick() {
+        history.push("/");
+    }
+
     const [formValues, setFormValues] = useState({
         name: '',
         email: '',
@@ -15,14 +23,10 @@ const ImportForm = ({handleSubmit}) => {
         setFormValues({...formValues, [name]: value})
     }
 
-    // const handleSubmit = async (data) => {
-    //   await saveUser(data)
-    // }
-
     const _handleSubmit = async (e) => {  
         e.preventDefault()
         await handleSubmit({ ...formValues })
-        console.log(formValues)
+        handleClick();
     }
 
     return (
@@ -32,7 +36,6 @@ const ImportForm = ({handleSubmit}) => {
               <Form.Control 
                   type="text" 
                   name="name" 
-                //   value={formValues.name}
                   onChange={handleChange} 
                   placeholder="Enter Name" 
               />
@@ -43,7 +46,6 @@ const ImportForm = ({handleSubmit}) => {
               <Form.Control 
                   type="text" 
                   name="email" 
-                //   value={formValues.unitaryPrice}
                   onChange={handleChange} 
                   placeholder="Enter E-Mail" 
               />
@@ -54,12 +56,8 @@ const ImportForm = ({handleSubmit}) => {
               <Form.Control 
                   type="text" 
                   name="password" 
-                //   value={formValues.size}
                   onChange={handleChange} 
                   placeholder="Enter Password" 
-                  // onInput = {(e) => {
-                  //     e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,16)
-                  // }} 
               />
             </Form.Group>
 
@@ -68,12 +66,8 @@ const ImportForm = ({handleSubmit}) => {
               <Form.Control 
                   type="text"
                   name="confirm_password" 
-                //   value={formValues.description}
                   onChange={handleChange} 
                   placeholder="Confirm Password"
-                  // onInput = {(e) => {
-                  //     e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,16)
-                  // }} 
                 />
             </Form.Group>
 
