@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { useHistory } from "react-router-dom";
 
 
 const ImportForm = ({handleSubmit, handleUser, handleValue}) => {
 
-
-    let history = useHistory();
-
-  function handleClick() {
-    history.push("/");
-  }
 
 
     const [formValues, setFormValues] = useState({
@@ -59,7 +52,7 @@ const ImportForm = ({handleSubmit, handleUser, handleValue}) => {
               />
             </Form.Group>
 
-            <Button onClick={handleClick} variant="primary" type="submit" >
+            <Button variant="primary" type="submit" >
                 Submit
             </Button>
             <Button className="mx-2" variant="secondary" type="button" >
