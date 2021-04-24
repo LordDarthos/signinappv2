@@ -57,46 +57,25 @@ function App() {
   
     }
 
-    // async function LoadUser () {
-    //     // const response = await getUserSession();
-    //     // const user = await getUserSession();
-    //     // console.log("USER",user)
-    //     // console.log("LoadUser", response)
-    //     if(user.status === 200 || user.status === 204) {
-    //         setUserLogedIn(true)
-    //     }
-    //     // console.log(user)
-    //     console.log(userLogedIn)
-    //     // setIsLoading(false);
-    // }
+    
 
     const handleSubmitUser = async (data) => {  
-        // await saveUser(data)
-        const user = await saveUser(data)
-        console.log("RESPUESTA",user)
-        if (user.status === 200) {
-            console.log("hola")
-        } else if (user.status === 204) {
-            
-        }
+        await saveUser(data)
     }
-    console.log(userSession)
-    console.log(userLogedIn)
+   
     const handleLoginUser = async (data) => {
         const user = await loginUser(data)
-        console.log("RESPUESTA",user)
+        
         if (user.status === 200) {
             setUserSession(user.data)
             setUserLogedIn(true)
-            // console.log(UserSession)
-            // setUserLogedIn(true)
-            // if(kk.status === 200) sessionStorage.setItem('mydata',{loged:true})
+            
         } else if (user.status === 204) {
             setUserLogedIn(false)
         }
-        // LoadNotes()
+        
     }
-    console.log(userLogedIn)
+    
     
     const handleLogoutUser = async () => {
         await setUserSession('')
@@ -129,10 +108,7 @@ function App() {
         setUserSession(data)
     }
 
-    // useEffect(() => { //mover este hook a shownotes crear logout
-    //     LoadNotes()
-    //     // LoadUser()
-    // }, [])
+  
 
   return (
     <Router>
