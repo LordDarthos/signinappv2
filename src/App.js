@@ -72,7 +72,6 @@ function App() {
 
     const handleSubmitUser = async (data) => {  
         await saveUser(data)
-        LoadNotes()
     }
     console.log(userSession)
     console.log(userLogedIn)
