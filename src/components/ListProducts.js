@@ -3,12 +3,8 @@ import { CardColumns } from 'react-bootstrap';
 import ImportCard from './Card';
 
 const ListProducts = ({ products, handleDeleteNote, handleEditNote, userSession
-    // handleOnDelete, handleOnUpdate, handleOnUpdateImg 
+    
 }) => { 
-    // useEffect(() => {
-    //     console.log(products)
-    // },[])
-
         
     
 
@@ -19,9 +15,6 @@ const ListProducts = ({ products, handleDeleteNote, handleEditNote, userSession
             products={products} 
             handleDeleteNote={handleDeleteNote}
             handleEditNote={handleEditNote}
-            // handleOnDelete={handleOnDelete}
-            // handleOnUpdate={handleOnUpdate}
-            // handleOnUpdateImg={handleOnUpdateImg}
         />
     ))
     
@@ -33,7 +26,7 @@ const ListProducts = ({ products, handleDeleteNote, handleEditNote, userSession
                 ?   <CardColumns className={"card-columns"}>
                         {listItems}
                     </CardColumns> 
-                : <div></div> //intentar corregir esto
+                : <div></div> 
             }
             
         </React.Fragment>

@@ -13,10 +13,6 @@ const Barnavigator = ({userSession, handleLogoutUser}) => {
         <Nav.Link href="/">Home</Nav.Link> 
         <Nav.Link href="/about">About</Nav.Link>
         
-        {/* <Link to={{
-          pathname: '/about',
-          state: [{id: 1, name: 'Ford', color: 'red'}]
-        }}>uju</Link> */}
       </Nav>
       <Nav>
       

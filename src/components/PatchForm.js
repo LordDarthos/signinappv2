@@ -9,7 +9,6 @@ const PatchForm = ({_id, handleEditNote, myType, myNameAttr, myPlaceholder, myNa
     const handleChange = async (e) => {
         const { name, value } = e.target
         await setFormName({[name]: value})
-        // console.log(formName)
     }
 
     const handleOnSubmit = async (e) => {

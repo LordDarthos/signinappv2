@@ -13,14 +13,11 @@ const ImportForm = ({handleSubmit}) => {
         setFormValues({...formValues, [name]: value})
     }
 
-    // const handleSubmit = async (data) => {
-    //   await saveUser(data)
-    // }
+
 
     const _handleSubmit = async (e) => {  
         e.preventDefault()
         await handleSubmit({ ...formValues })
-        console.log(formValues)
     }
 
     return (
