@@ -76,14 +76,14 @@ function App() {
         const user = await loginUser(data)
         console.log("RESPUESTA",user)
         if (user.status === 200) {
-            setUserSession(user.data)
-            setUserLogedIn(true)
+            await setUserSession(user.data)
+            await setUserLogedIn(true)
             // console.log(UserSession)
             // setUserLogedIn(true)
             // if(kk.status === 200) sessionStorage.setItem('mydata',{loged:true})
 
   
-            history.push("/");
+            history.push("/about");
             
 
         } else if (user.status === 204) {
