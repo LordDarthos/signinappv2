@@ -89,7 +89,11 @@ export async function saveUser (productData) {
         const response = await axios({
             url: `${baseUrl}/users/signup`,
             method: 'POST',
-            data: formData
+            data: formData,
+            withCredentials: true,
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
         console.log(response)
         return response
